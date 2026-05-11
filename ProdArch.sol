@@ -172,3 +172,4 @@ contract AccessAndVerification {
         return keccak256(abi.encodePacked(storedSpecificationsHash)) == keccak256(abi.encodePacked(_specificationsHashToCheck));
     }
 }
+//check
