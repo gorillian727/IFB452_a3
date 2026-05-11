@@ -271,11 +271,11 @@
 	},
 	"sources": {
 		"ProdArch.sol": {
-			"keccak256": "0xb4a1ff3ea86c19676d717981fe781e3c5d5e731ad91d78f15aa3c6d73b3e2f33",
+			"keccak256": "0x56390c442900dc9f312f115dcb2a2063238d294514b80927c3f2ce3299bc4d60",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://336ee497bad4c0cfb5e6d0c9f7a5a9bfe5c6294b1a175fb0b10b048dfdadf258",
-				"dweb:/ipfs/Qmc8VDSoLMR2Ha8dZKFXK13jDBaNbn74fiLJWe7s6cCenb"
+				"bzz-raw://d9009b1deab75a7691e1debe0d40b831f5d4b491e9c9d1c58e9959d96f2f7d56",
+				"dweb:/ipfs/QmafcZFVTNXwJqYq7BBBJhhCZo9k4wYS1GaQAKTpNK7RCU"
 			]
 		}
 	},

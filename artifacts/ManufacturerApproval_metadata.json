@@ -6,22 +6,16 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_registryAddress",
-						"type": "address"
-					}
-				],
+				"inputs": [],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
 			{
 				"inputs": [],
-				"name": "registry",
+				"name": "admin",
 				"outputs": [
 					{
-						"internalType": "contract ProductRegistry",
+						"internalType": "address",
 						"name": "",
 						"type": "address"
 					}
@@ -32,17 +26,25 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "_productId",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "_manualHashToCheck",
-						"type": "string"
+						"internalType": "address",
+						"name": "_manufacturer",
+						"type": "address"
 					}
 				],
-				"name": "verifyManual",
+				"name": "approveManufacturer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "approvedManufacturers",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -56,17 +58,12 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "_productId",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "_specificationsHashToCheck",
-						"type": "string"
+						"internalType": "address",
+						"name": "_manufacturer",
+						"type": "address"
 					}
 				],
-				"name": "verifySpecifications",
+				"name": "isApproved",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -80,50 +77,14 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "_productId",
-						"type": "uint256"
+						"internalType": "address",
+						"name": "_manufacturer",
+						"type": "address"
 					}
 				],
-				"name": "viewProductDetails",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
+				"name": "revokeManufacturer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -140,7 +101,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"ProdArch.sol": "AccessAndVerification"
+			"ProdArch.sol": "ManufacturerApproval"
 		},
 		"evmVersion": "prague",
 		"libraries": {},

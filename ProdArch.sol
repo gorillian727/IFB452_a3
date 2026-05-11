@@ -9,6 +9,37 @@ Large files such as manuals/specifications are stored off-chain.
 Only their hashes and links are stored on-chain.
 */
 
+// Contract 1: Manufacturer Approval
+// This contract controls which manufacturers are allowed to write product data.
+
+contract ManufacturerApproval {
+
+    address public admin;
+
+    mapping(address => bool) public approvedManufacturers;
+
+    constructor() {
+        admin = msg.sender;
+    }
+
+    modifier onlyAdmin() {
+        require(msg.sender == admin, "Only admin can approve manufacturers");
+        _;
+    }
+
+    function approveManufacturer(address _manufacturer) public onlyAdmin {
+        approvedManufacturers[_manufacturer] = true;
+    }
+
+    function revokeManufacturer(address _manufacturer) public onlyAdmin {
+        approvedManufacturers[_manufacturer] = false;
+    }
+
+    function isApproved(address _manufacturer) public view returns (bool) {
+        return approvedManufacturers[_manufacturer];
+    }
+}
+
 contract ProductRegistry {
 
     address public admin;
@@ -172,4 +203,3 @@ contract AccessAndVerification {
         return keccak256(abi.encodePacked(storedSpecificationsHash)) == keccak256(abi.encodePacked(_specificationsHashToCheck));
     }
 }
-//check
